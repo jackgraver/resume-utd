@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  resume-gen:
+    build: .
+    container_name: resume-gen
+    volumes:
+      - ./output:/app/output # PDFs appear here
+      - ./templates:/app/templates # LaTeX templates
+      - ./data:/app/data # JSON / input data
+    working_dir: /app
+    command: bash -c "./target/release/resume-gen && xelatex -output-directory=output output/resume.tex"

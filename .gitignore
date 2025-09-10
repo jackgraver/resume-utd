@@ -1,0 +1,7 @@
+/target
+resume.json
+*.aux
+*.log
+*.pdf
+*.tex
+*.hbs

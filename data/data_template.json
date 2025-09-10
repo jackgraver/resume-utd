@@ -1,0 +1,54 @@
+{
+  "name": "",
+  "contact": "",
+  "website": "",
+  "education": [
+    {
+      "name": "",
+      "degree": "",
+      "years": "",
+      "points": [""]
+    },
+    {
+      "name": "",
+      "degree": "",
+      "years": "",
+      "points": [""]
+    },
+    {
+      "name": "",
+      "degree": "",
+      "years": "",
+      "points": [""]
+    }
+  ],
+  "experience": [
+    {
+      "company": "",
+      "position": "",
+      "years": "",
+      "points": [""]
+    }
+  ],
+  "projects": [
+    {
+      "name": "",
+      "points": [""]
+    },
+    {
+      "name": "",
+      "link": "",
+      "points": [""]
+    },
+    {
+      "name": "",
+      "link": "",
+      "points": [""]
+    },
+    {
+      "name": "",
+      "link": "",
+      "points": [""]
+    }
+  ]
+}
