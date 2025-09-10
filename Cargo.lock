@@ -157,7 +157,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "resume-gen"
+name = "resume-utd"
 version = "0.1.0"
 dependencies = [
  "handlebars",

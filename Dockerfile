@@ -30,4 +30,4 @@ RUN cargo build --release
 RUN mkdir -p /app/output
 
 # Default command: run Rust generator and compile PDF
-CMD ["bash", "-c", "./target/release/resume-gen && xelatex -output-directory=output output/resume.tex"]
+CMD ["bash", "-c", "./target/release/resume-utd && xelatex -output-directory=output output/resume.tex"]
