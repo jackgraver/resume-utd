@@ -44,13 +44,20 @@ pub struct DataManager {
 impl DataManager {
     pub fn new(file_path: &str) -> io::Result<Self> {
         let data_str = fs::read_to_string(file_path)?;
-        let resume: Resume = serde_json::from_str(&data_str)?;
-        
+        let resume: Resume = match serde_json::from_str(&data_str) {
+            Ok(r) => r,
+            Err(e) => {
+                eprintln!("Failed to parse resume JSON: {}", e);
+                std::process::exit(1);
+            }
+        };
+
         Ok(Self {
             resume,
             file_path: file_path.to_string(),
         })
     }
+
 
     pub fn save(&self) -> io::Result<()> {
         let json_str = serde_json::to_string_pretty(&self.resume)?;

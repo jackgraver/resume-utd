@@ -14,7 +14,7 @@ pub fn run_app() -> io::Result<()> {
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
     
-    let mut app = AppState::new().map_err(|e| {
+    let mut app = AppState::new("data/resume.json").map_err(|e| {
         eprintln!("Failed to load resume data: {}", e);
         io::Error::new(io::ErrorKind::Other, format!("{}", e))
     })?;
