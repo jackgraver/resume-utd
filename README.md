@@ -1,5 +1,7 @@
 # Resume Generator
 
+![](./assets/demo.gif)
+
 Super simple Rust-based resume generator that produces LaTeX resumes as PDFs. Provides a simple, quick way to update resume information and generate a new PDF to use.
 
 The project uses templates and JSON data to generate the resumes. The workflow is containerized with Docker to ensure consistent builds across systems.
