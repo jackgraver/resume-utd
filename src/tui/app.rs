@@ -77,8 +77,24 @@ pub struct AppState {
 }
 
 impl AppState {
-    pub fn new() -> Result<Self, Box<dyn std::error::Error>> {
-        let data_manager = DataManager::new("data/resume.json")?;
+    pub fn new(file_path: &str) -> Result<Self, Box<dyn std::error::Error>> {
+        let data_manager = match DataManager::new(file_path) {
+            Ok(r) => r,
+            Err(e) => {
+                let template = "data/data_template.json";
+                let target = "data/resume.json";
+
+                if Path::new(template).exists() {
+                    fs::copy(template, target)?;
+                    eprintln!("Created new {} from template", target);
+
+                    DataManager::new(file_path)?
+                } else {
+                    eprintln!("Template {} not found, cannot recover", template);
+                    std::process::exit(1);
+                }
+            }
+        };
         Ok(Self {
             current_menu: MenuItem::PersonalInfo,
             focus: Focus::Sidebar,
